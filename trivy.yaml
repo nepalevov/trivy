@@ -1,2 +1,7 @@
 db:
-  repository: "cock.aws/aquasecurity/trivy-db:2"
+  repository:
+    - ghcr.io/aquasecurity/trivy-db:2
+    - public.ecr.aws/aquasecurity/trivy-db:2
+  java-repository:
+    - ghcr.io/aquasecurity/trivy-java-db:1
+    - public.ecr.aws/aquasecurity/trivy-java-db:1
