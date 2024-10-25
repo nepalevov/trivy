@@ -1,12 +1,8 @@
 db:
+  no-progress: true
   repository:
     - ghcr.io/aquasecurity/trivy-db:2
     - public.ecr.aws/aquasecurity/trivy-db:2
   java-repository:
     - ghcr.io/aquasecurity/trivy-java-db:1
     - public.ecr.aws/aquasecurity/trivy-java-db:1
-
-  image:
-    image-config-scanners:
-      - misconfig
-      - secret
