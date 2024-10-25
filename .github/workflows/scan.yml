@@ -8,13 +8,15 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        run: [1, 2, 3]
+        app: [
+          ai-dial-chat:0.19.0,
+          ai-dial-core:0.18.0,
+          ai-dial-adapter-bedrock:0.16.0
+        ]
 
     continue-on-error: true
 
     steps:
-      - name: Run ${{ matrix.run }} of 100
-        run: echo "Running ${{ matrix.run }} of 100"
       - name: Checkout code
         uses: actions/checkout@v4.2.2
 
@@ -28,7 +30,7 @@ jobs:
       - name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@915b19bbe73b92a6cf82a1bc12b087c9a19a5fe2 # v0.28.0
         with:
-          image-ref: "ghcr.io/epam/ai-dial-core:0.18.0"
+          image-ref: "ghcr.io/epam/${{ matrix.app }}"
           format: "table"
           ignore-unfixed: "true"
           vuln-type: "os,library"
