@@ -1,0 +1,2 @@
+db:
+  repository: "cock.aws/aquasecurity/trivy-db:2"
