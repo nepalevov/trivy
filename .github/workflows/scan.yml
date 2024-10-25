@@ -9,9 +9,9 @@ jobs:
     strategy:
       matrix:
         app: [
-          ai-dial-chat:0.19.0,
-          ai-dial-core:0.18.0,
-          ai-dial-adapter-bedrock:0.16.0
+          "ai-dial-chat:0.19.0",
+          "ai-dial-core:0.18.0",
+          "ai-dial-adapter-bedrock:0.16.0"
         ]
 
     continue-on-error: true
